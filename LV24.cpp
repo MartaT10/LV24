@@ -6,6 +6,7 @@ using namespace std;
 void a1_hotpotato();
 void a2_hotpotato();
 void b_hotpotato();
+void min_cost_of_ropes();
 
 int main()
 {
@@ -14,6 +15,8 @@ int main()
     //a1_hotpotato();
     //a2_hotpotato();
     //b_hotpotato();
+    
+    //min_cost_of_ropes();
 
     return 0;
 }
@@ -105,4 +108,22 @@ void b_hotpotato() {
         q.pop();
     }
     cout << "Pobjednik: " << q.front() << endl;
+}
+
+void min_cost_of_ropes() {
+    int n; cin >> n;
+    int cost = 0;
+    queue<int> ropes;
+
+    for (int i = 0;i < n;i++) {
+        int rope; cin >> rope;
+        ropes.push(rope);
+    }
+
+    for (int i = 0;i < n;i++) {
+        cost += ropes.front();
+        ropes.pop();
+    }
+
+    cout << cost;
 }
